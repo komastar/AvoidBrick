@@ -795,7 +795,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574652869}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -806,8 +806,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &755676959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  hp: 1
   rigid: {fileID: 1411821342}
   ScoreText: {fileID: 525109765}
   GameOverText: {fileID: 1288322131}
@@ -2184,6 +2183,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 110c61cd7a0dfb44ca915bd21322c764, type: 3}
   - {fileID: 21300000, guid: d0c0accc4b773ef4e945acdc78ba48cc, type: 3}
   - {fileID: 21300000, guid: c569d8b53279d6d429b003081065117e, type: 3}
+  brickGenPeriod: 1
+  brickSpeedInit: 5
+  brickSpeed: 5
+  brickTypeOverride: 2
 --- !u!1 &1752402278
 GameObject:
   m_ObjectHideFlags: 0

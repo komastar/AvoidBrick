@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Komastar.Combat;
+using Komastar.Interface;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class PlayerObject : MonoBehaviour, IPlayer
 {
-    private static Player instance;
+    private static PlayerObject instance;
+    public static IPlayer GetPlayer()
+    {
+        return instance;
+    }
+
+    private IDamagable damagable = null;
 
     private static int score;
     public static int Score
@@ -23,31 +27,26 @@ public class Player : MonoBehaviour
         }
     }
 
-    public static int Hp
-    {
-        get => instance.hp;
-        set => instance.hp = value;
-    }
-
     public static bool IsPlay = true;
 
     public float speed;
-    public int hp;
 
     public Rigidbody2D rigid;
     public Text ScoreText;
     public Text GameOverText;
-    public Ball ball;
+    public BallObject ball;
 
     private void Awake()
     {
         instance = this;
         speed = 15f;
+        damagable = new Damagable();
+        damagable.SetHp(1);
     }
 
     void Update()
     {
-        if (0 >= hp)
+        if (0 >= damagable.GetHp())
         {
             Time.timeScale = 0f;
             IsPlay = false;
@@ -75,5 +74,20 @@ public class Player : MonoBehaviour
         Time.timeScale = 1f;
         Score = 0;
         UnityEngine.SceneManagement.SceneManager.LoadScene("PlayScene");
+    }
+
+    public void SetSmileFace()
+    {
+        ball.SetSmileFace();
+    }
+
+    public void SetSadFace()
+    {
+        ball.SetSadFace();
+    }
+
+    public IDamagable GetDamagable()
+    {
+        return damagable;
     }
 }

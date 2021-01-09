@@ -1,7 +1,5 @@
-﻿using Assets.Foundation.UI.Common;
-using System.Collections;
+﻿using Komastar.UI.Common;
 using System.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Foundation.UI.PopUp

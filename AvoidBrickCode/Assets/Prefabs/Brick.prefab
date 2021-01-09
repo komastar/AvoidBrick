@@ -43,11 +43,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8335660012902747083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c3e8f2c83722641b3782507c5cd009, type: 3}
+  m_Script: {fileID: 11500000, guid: e0f36634a882b3040b94d7de4240d429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5419934222800942942}
-  speed: 0
+  speed: 10
 --- !u!50 &1779106236792470264
 Rigidbody2D:
   serializedVersion: 4
@@ -56,7 +56,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8335660012902747083}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
