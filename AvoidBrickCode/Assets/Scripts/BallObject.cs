@@ -14,11 +14,6 @@ public class BallObject : MonoBehaviour
             PlayerObject.GetPlayer().GetDamagable().SetHp(0);
             SetSadFace();
         }
-        else if (collision.gameObject.CompareTag("Brick"))
-        {
-            IBrick brick = collision.gameObject.GetComponent<BrickObject>().ownBrick;
-            brick.Take(PlayerObject.GetPlayer());
-        }
     }
 
     public void SetSmileFace()

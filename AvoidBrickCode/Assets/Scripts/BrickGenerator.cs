@@ -35,10 +35,7 @@ public class BrickGenerator : MonoBehaviour
 
     private void Awake()
     {
-        if (ReferenceEquals(null, Instance))
-        {
-            Instance = this;
-        }
+        Instance = this;
         Bricks = new Queue<BrickObject>();
         BuffQueue = new Queue<IEnumerator>();
         brickSpeed = brickSpeedInit;
@@ -46,6 +43,7 @@ public class BrickGenerator : MonoBehaviour
 
     private async void Start()
     {
+        BrickObject.GlobalSpeed = brickSpeed;
         StartCoroutine(GenBrickCo());
         while (true)
         {
@@ -129,8 +127,6 @@ public class BrickGenerator : MonoBehaviour
                 newBrick = Instantiate(brickPrefab, position, Quaternion.identity, transform);
             }
 
-            newBrick.speed = brickSpeed;
-
             float randomBrick = Random.Range(0f, 100f);
             EBrickType brickType = EBrickType.Damage;
             if (EBrickType.Count != brickTypeOverride)
@@ -159,11 +155,11 @@ public class BrickGenerator : MonoBehaviour
     public async Task SlowBrickCo(float time, float speed)
     {
         Debug.Log("Slow");
-        brickSpeed = speed;
+        BrickObject.GlobalSpeed = speed;
 
         await Task.Delay((int)(time * 1000f));
 
         Debug.Log("Slow back");
-        brickSpeed = brickSpeedInit;
+        BrickObject.GlobalSpeed = brickSpeedInit;
     }
 }

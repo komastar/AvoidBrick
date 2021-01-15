@@ -6,7 +6,7 @@ namespace Komastar.Factory
     public abstract class Brick : IBrick
     {
         protected GameObject ownObject;
-        public virtual void SetOwner(GameObject owner)
+        public virtual void SetUp(GameObject owner)
         {
             ownObject = owner;
         }

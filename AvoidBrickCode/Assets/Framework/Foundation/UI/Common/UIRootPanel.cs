@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Foundation.UI.Common
+namespace Foundation.UI.Common
 {
     public class UIRootPanel : MonoBehaviour
     {
+        public Vector2 Ratio;
         public RectTransform[] leftRightPanel;
         public RectTransform[] topBotPanel;
 
         private void Awake()
         {
-            float refRatio = 16f / 9f;
-            float ratio = Screen.height / Screen.width;
+            float refRatio = Ratio.x / Ratio.y;
+            float ratio = Screen.height / (float)Screen.width;
             float diffRatio = refRatio - ratio;
             Vector2 sizeDelta = Vector2.zero;
             Rect camRect = Camera.main.rect;

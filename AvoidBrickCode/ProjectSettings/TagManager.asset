@@ -7,6 +7,7 @@ TagManager:
   - Terminator
   - Ball
   - Brick
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - 
   - Player
   - Brick
-  - 
-  - 
+  - Ball
+  - Item
   - 
   - 
   - 
@@ -43,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Body
+    uniqueID: 1502732699
+    locked: 0
+  - name: Eye
+    uniqueID: 1955959381
+    locked: 0
+  - name: Hair
+    uniqueID: 44474425
+    locked: 0
+  - name: Acc
+    uniqueID: 1295503639
     locked: 0

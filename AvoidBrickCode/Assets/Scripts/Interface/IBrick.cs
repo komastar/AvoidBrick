@@ -4,7 +4,7 @@ namespace Komastar.Interface
 {
     public interface IBrick
     {
-        void SetOwner(GameObject owner);
+        void SetUp(GameObject owner);
         void Take(IPlayer player);
     }
 }

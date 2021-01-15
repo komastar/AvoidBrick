@@ -28,7 +28,7 @@ namespace Komastar.Factory
                     break;
             }
 
-            brick.SetOwner(owner);
+            brick.SetUp(owner);
 
             return brick;
         }

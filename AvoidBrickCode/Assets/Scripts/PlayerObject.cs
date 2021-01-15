@@ -68,6 +68,15 @@ public class PlayerObject : MonoBehaviour, IPlayer
 #endif
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            IBrick brick = collision.gameObject.GetComponent<BrickObject>().ownBrick;
+            brick.Take(this);
+        }
+    }
+
     public void ResetPlayer()
     {
         IsPlay = true;
