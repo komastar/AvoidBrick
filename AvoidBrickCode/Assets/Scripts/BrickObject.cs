@@ -35,6 +35,11 @@ public class BrickObject : MonoBehaviour
         {
             ownBrick.Take(PlayerObject.GetPlayer());
         }
+        else if (go.CompareTag("Cover"))
+        {
+            TakeScore();
+            collision.gameObject.SetActive(false);
+        }
     }
 
     public void TakeScore()

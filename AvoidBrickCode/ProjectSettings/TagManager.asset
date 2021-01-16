@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - Brick
   - Item
+  - Cover
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Acc
     uniqueID: 1295503639
+    locked: 0
+  - name: Cover
+    uniqueID: 1775573967
     locked: 0
